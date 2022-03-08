@@ -17,7 +17,7 @@
     - 1995년 Brendan Eich이 단 10일만에 만든 언어, 무한한 확장성을 가지고 있다. ( = 오류도 많았음)
     - JS는 수 많은 사람들이 쓰는 언어이고, 브라우저에 내장되어 있으므로 따로 설치할 필요가 없다
     - BE의 언어는 매우 다양하지만, FE에서는 JS만 알면 커버 가능!
-- ✨브라우저는 Html, Css, JS만 읽을 수 있다.   
+- ✨브라우저는 HTML, CSS, JS만 읽을 수 있다.   
 - 개발자도구의 console을 잘 활용하도록 하자
 - JS와 CSS만으로는 브라우저에 표시 할 수 없다 glue역할을 하는 html이 꼭 필요하다!
 - cmd에서 폴더 생성하는 명령어  
@@ -38,8 +38,8 @@
 
     게으른 개발자가 되기 위해서 노력하자 → 반복 줄이기!👩‍💻  
 
-- **변수**
-    > variable, 변경 가능한 수  
+- **변수**  
+👉 variable, 변경 가능한 수  
 
     - ex. 2 + 3 or 2 * 3 같은 연산시 숫자를 바꿔야 할 일이 생기면 매번 수정해야 되는데 이 것은 비 효율적이다!🤔
     - 이 때 변수에 숫자를 저장하고 a + b 같은 형식으로 계산을 하면 변수만 바꾸면 되니까 좋은 방법이다!🤗
@@ -51,19 +51,19 @@
 
 <br/>
 
-- **변수의 타입**
-    > number, string, boolean, null, undefined가 존재한다.
+- **변수의 타입**  
+👉 number, string, boolean, null, undefined가 존재한다.
 
-    1️⃣ number ⇒ integer → 2 / float → 2.0 가 존재하며 int + float = float 이다.  
-    2️⃣ string ⇒ "" , '' 으로 표현가능하며 앞 뒤를 동일한 기호로 사용해야 한다.  
-    3️⃣ boolean ⇒ true | false ("true" 이렇게 쓰면 안 된다, 컴퓨터의 0 = false, 1 = true)  
-    4️⃣ null ⇒ '존재하지 않는다'라는 의미, '절대 자연적으로 생기지 않으며 우리가 variable안에 어떤 것이 없다는 것을 확실히 하기 위해 쓰는 것'  
-    5️⃣ undefined ⇒ 존재하지만 정의되지 않았다 라는 의미  
+    ① number ⇒ integer → 2 / float → 2.0 가 존재하며 int + float = float 이다.  
+    ② string ⇒ "" , '' 으로 표현가능하며 앞 뒤를 동일한 기호로 사용해야 한다.  
+    ③ boolean ⇒ true | false ("true" 이렇게 쓰면 안 된다, 컴퓨터의 0 = false, 1 = true)  
+    ④ null ⇒ '존재하지 않는다'라는 의미, '절대 자연적으로 생기지 않으며 우리가 variable안에 어떤 것이 없다는 것을 확실히 하기 위해 쓰는 것'  
+    ⑤ undefined ⇒ 존재하지만 정의되지 않았다 라는 의미  
 
 <br/>
 
-- **Array [ ]**
-    > 하나의 variable안에 데이터의 list를 가지기 위한 목적으로 만들어졌다.    
+- **Array [ ]**  
+👉 하나의 variable안에 데이터의 list를 가지기 위한 목적으로 만들어졌다.    
     - 비 효율적 예시🙅‍♀️  
         - 반복 너무 많고, 원하는 변수를 찾기도 어려움    
         ```JavaScript
@@ -94,7 +94,7 @@
 <br/>
 
 - **Object { }**    
-    > 설명이 필요한 data들을 나열해야 할 때 사용    
+👉 설명이 필요한 data들을 나열해야 할 때 사용    
     - Object가 필요한 예시 👀
         ```JavaScript
             const playerName = "jm";                // player라는 공통점이 있음
@@ -140,15 +140,17 @@
     -  property를 추가할 수도 있다.
         ```js
             player.lastName = "potato";
-            console.log(player);            /* 
-                                            player = {
-                                                name: 'jm',
-                                                points: 121212,
-                                                cool: true,
-                                                rich: "little bit",
-                                                lastName: "potato"
-                                            };
-                                            /      
+            console.log(player);  
+            
+            /* 
+               player = {
+                   name: 'jm',
+                   points: 121212,
+                   cool: true,
+                   rich: "little bit",
+                   lastName: "potato"
+               };
+             /      
         ```
     - array vs object  
         > 설명이 필요없는 것 -> array, 설명이 필요한 것은 -> object
