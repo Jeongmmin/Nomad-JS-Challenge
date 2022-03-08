@@ -54,11 +54,11 @@
 - **변수의 타입**
     > number, string, boolean, null, undefined가 존재한다.
 
-    1. number => integer → 2 / float → 2.0 가 존재하며 int + float = float 이다.
-    2. string => "" , '' 으로 표현가능하며 앞 뒤를 동일한 기호로 사용해야 한다.
-    3. boolean => true | false ("true" 이렇게 쓰면 안 된다, 컴퓨터의 0 = false, 1 = true)
-    4. null => '존재하지 않는다'라는 의미, '절대 자연적으로 생기지 않으며 우리가 variable안에 어떤 것이 없다는 것을 확실히 하기 위해 쓰는 것'
-    5. undefined => 존재하지만 정의되지 않았다 라는 의미
+    1️⃣ number ⇒ integer → 2 / float → 2.0 가 존재하며 int + float = float 이다.  
+    2️⃣ string ⇒ "" , '' 으로 표현가능하며 앞 뒤를 동일한 기호로 사용해야 한다.  
+    3️⃣ boolean ⇒ true | false ("true" 이렇게 쓰면 안 된다, 컴퓨터의 0 = false, 1 = true)  
+    4️⃣ null ⇒ '존재하지 않는다'라는 의미, '절대 자연적으로 생기지 않으며 우리가 variable안에 어떤 것이 없다는 것을 확실히 하기 위해 쓰는 것'  
+    5️⃣ undefined ⇒ 존재하지만 정의되지 않았다 라는 의미  
 
 <br/>
 
