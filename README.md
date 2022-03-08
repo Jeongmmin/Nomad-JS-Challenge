@@ -6,3 +6,5 @@
 <br/>  
 
 [Day1](./Markdown/TodayILearn.md/#day1)
+
+[Day2](./Markdown/TodayILearn.md/#day2)
