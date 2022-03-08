@@ -5,6 +5,6 @@
 <br/>  
 <br/>  
 
-[✍️ Day1](./Markdown/TodayILearn.md/#day1)
+[✍️ Day1](./Markdown/TodayILearn.md/#-day1---1--20강)
 
 [✍️ Day2](./Markdown/TodayILearn.md/#-day2---21---26강-202238)
