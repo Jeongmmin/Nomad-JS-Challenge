@@ -7,4 +7,4 @@
 
 [✍️ Day1](./Markdown/TodayILearn.md/#day1)
 
-[✍️ Day2](./Markdown/TodayILearn.md/#day2)
+[✍️ Day2](./Markdown/TodayILearn.md/#-day2---21---26강-202238)
