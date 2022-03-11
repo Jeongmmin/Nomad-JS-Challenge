@@ -445,8 +445,8 @@
         ```
         - getElementById( ) : id가 동일한 항목 중 첫번 째 요소를 가져온다.
         - getElementByCalssName( ) : class가 동일한 항목을 가져온다.
-        - querySelector( ) : 괄호 안의 요소와 동일한 것을 가져온다. element를 CSS방식으로 검색 할 수 있다.🔍   
-        (ex. .title, #title, .hello h1)
+        - querySelector( ) : 괄호 안의 요소와 동일한 것을 가져온다. element를 CSS방식으로 검색 할 수 있다.🔍     
+          (ex. .title, #title, .hello h1)
         - querySelectorAll( ) : 괄호 안의 요소와 동일한 것을 모두 가져온다.  
 
         <br/>
@@ -485,8 +485,9 @@
         ```
     - object안의 내용을 바꿀 수 있지만, 전부 다 바꿀 수 있는 것은 아니다.   
     - 우리가 listen하고 싶은 event를 찾는 가장 좋은 방법
-        - 📌 방법1 ) 구글에 찾고 싶은 element의 이름 + mdn 이라고 검색 🔍 ex.h1 html element mdn  
-        그 중에 Web APIs라는 문장이 포함된 페이지 찾기!  
+        - 📌 방법1 ) 구글에 찾고 싶은 element의 이름 + mdn 이라고 검색 🔍   
+                     ex) h1 html element mdn  
+                     그 중에 Web APIs라는 문장이 포함된 페이지 찾기!  
         - 📌 방법 2 )  console.dir(h1)해서 on~ 으로 시작하는 property인 evnet를 관찰 가능  
     - 대표적 종류
         - click, mouseenter, 입력을 끝내거나, 키보드 키누를 때, wifi 접속 해제될 때 ... 
