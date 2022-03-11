@@ -410,7 +410,8 @@
 
 - 🌱 **JS 사용하는 이유 ❓**  
 👉 HTML과 상호작용 하기 위해서
-    - JS는 HTML의 element들을 
+    - JS는 HTML의 element들을 자신의 방식으로 조작가능하다.
+    - JS로 HTML을 조작하면 원래 HTML파일에 영향을 주지 않고 독립적으로 조작할 수 있다.
 
 <br/>
 <br/>
