@@ -7,12 +7,13 @@
 
 **누르면 이동 ⏬**
 
-[✍️ Day1](./Markdown/TodayILearn.md/#-day1---1--20강)
+<!-- [✍️ Day1](./Markdown/TodayILearn.md/#-day1---1--20강) -->
+[✍️ Day1](./Day1/TIL_Day1.md)
 
-[✍️ Day2](./Markdown/TodayILearn.md/#-day2---21---26강)
+[✍️ Day2](./Day2/TIL_Day2.md)
 
-[✍️ Day3](./Markdown/TodayILearn.md/#-day3---27---216강)
+[✍️ Day3](./Day3/TIL_Day3.md)
 
-[✍️ Day4](./Markdown/TodayILearn.md/#-day4---30---35강)
+[✍️ Day4](./Day4/TIL_Day4.md)
 
-[✍️ Day5](./Markdown/TodayILearn.md/#-day5---36---38강)
+[✍️ Day5](./Day4/TIL_Day5.md)
