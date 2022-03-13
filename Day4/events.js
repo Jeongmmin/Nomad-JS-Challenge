@@ -2,7 +2,7 @@ const h1 = document.querySelector(".hello");
 
 console.log(h1);
 
-// h1.style.color = "blue"; 
+// h1.style.color = "cornflowerblue"; 
 function handleTitleClick() {
     console.log("h1 was clicked!");
     h1.style.color = "green";

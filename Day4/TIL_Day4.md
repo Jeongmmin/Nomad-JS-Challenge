@@ -98,7 +98,7 @@ object로 표시된 element를 보여준다.
 
 ```js
     // style변경 예시
-    title.style.color = "blue";         // 이런식으로 사용
+    title.style.color = "conrflowerblue";         // 이런식으로 사용
 ```     
 - Event 등록하는 방법
 ```js
