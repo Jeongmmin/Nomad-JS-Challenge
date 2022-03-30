@@ -60,8 +60,10 @@
 ```js
     function onLoginBtnClick() {
         /** 
-         *  이렇게하면 문제점 
-         * → value값이 없을 때는 hello 빈칸이 나와서 값이 없다는 것을 명확하게 알 수 없다.
+         
+          이렇게하면 문제점 
+          → value값이 없을 때는 hello 빈칸이 나와서 값이 없다는 것을 명확하게 알 수 없다.
+
         */
         console.log('hello', loginInput.value);
         
@@ -72,8 +74,9 @@
         }else if (username.length > 15) {
             alert("Your name is too long.");
         }
-        // 이 방법도 괜찮기는 하지만 브라우저의 기본기능을 사용하는 것이 더 좋다.
+        
     }
+    // 이 방법도 괜찮기는 하지만 브라우저의 기본기능을 사용하는 것이 더 좋다.
 ``` 
 - 개선된 방법
 - input안에 조건을 입력하기
@@ -105,17 +108,19 @@
   - 이때까지 배운내용은 함수에 ( ) 작성하면 바로 실행한다는 의미라는 것!
   - 하지만 추가로 알아야 할 개념이 있다.   
     - 정확하게 말하면, 브라우저는 onLoginSubmit() 만을 하고 있던 것이 아니다!!     
-      ```📌 실제로는 함수 호출 → function(infomation)형태로 **실행** ➕ **정보전달**이 동시에 이루어진다.😆```  
+      ```📌 실제로는 함수 호출 → function(infomation)형태로 실행 ➕ 정보전달이 동시에 이루어진다.😆```  
 
 - 예시코드
 ```js
     const loginForm = document.querySelector("#login-form");
     const loginInput = document.querySelector("#login-form input");
 
-    /** 
-     * 브라우저와 어떤 내용을 주고받는지 알기 위해서 argument주고 preventDefault추가.
-     * 이름이 무엇인지는 상관없음 - tomato 사용
-     * */ 
+    /**
+      
+     브라우저와 어떤 내용을 주고받는지 알기 위해서 argument주고 preventDefault추가.
+     이름이 무엇인지는 상관없음 - tomato 사용
+
+    */ 
 
     function onLoginSubmit(tomato) {            
         tomato.preventDefault()     // '새로고침'이라는 기본동작 막기
@@ -126,9 +131,9 @@
     loginForm.addEventListener('submit', onLoginSubmit);
 ```
 - 모든 function의 첫 번째 argument는 항상 지금 막 벌어진 일들에 대한 정보가 된다.   
-  JS가 그 정보를 무료로 제공한다.
+  👉 JS가 그 정보를 무료로 제공한다.
 - 우리는 공간만 제공하면 된다.   
-  argument공간만 제공하면 JS가 알아서 방금 일어난 event에 대한 정보를 지닌 argument를 채워넣는다.
+  👉 argument공간만 제공하면 JS가 알아서 방금 일어난 event에 대한 정보를 지닌 argument를 채워넣는다.
 - console.dir(argument)로 확인 가능
 - ✨중요한 Point!   
   → console에 나오는 정보가 방금 실행된 event라는 점!!  
