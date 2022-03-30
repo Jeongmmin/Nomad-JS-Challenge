@@ -58,7 +58,7 @@ if (savedUsername === null) {
 
 /** paintGreeting함수를 이용해서 코드 반복을 줄였지만, 우리가 함수를 호출하는 위치에 따라 유저정보는 다른 곳에서 오게 된다.
  * 예시) local Storage에 유저정보가 있으면 거기서 유저정보를 받아서 인자로 넣는다.
- * 만약 local storage에 유저정보가 없다면, 우리는 form의 submit을 기다라고 form이 submit되면 우리는 input으로부터 유저정보를 받고, input에서 받은 user를 가진 patint Greetings를 호출할 것이다.
+ * 만약 local storage에 유저정보가 없다면, 우리는 form의 submit을 기다리고 form이 submit되면 우리는 input으로부터 유저정보를 받고, input에서 받은 user를 가진 patint Greetings를 호출할 것이다.
  * 
  * 
  * 
