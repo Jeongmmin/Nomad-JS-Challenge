@@ -27,7 +27,7 @@
 ```js
     setInterval(getClock, 1000)  // 1초 마다 계속 실행
 
-    setInterval(getClock, 5000)  // 5초 뒤 한번 실행
+    setTimeout(getClock, 5000)  // 5초 뒤 한번 실행
 ```
 <br/>    
 
