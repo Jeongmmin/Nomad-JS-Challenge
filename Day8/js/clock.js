@@ -84,3 +84,48 @@ getClock();
 setInterval(getClock, 1000)
 
 // 다음시간 전까지 명언, 작가 10개정도 가져오기
+
+
+// 복습
+/**
+ * 기능 별로 파일 구분하기
+ * 
+ * Intervals vs timeout 의 차이
+ * interval : 매번 일어나야 하는 일 / JS가 이미 내장하고 있는 함수 => setInterval(함수명, 반복될 시간(ms))
+ * 
+ * timeout : 반복되지 않음, 일정 시간 뒤에 실행된다. => setTimeout(함수명, 실행될 시간(ms))
+ * 
+ * https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date 여기에 Date와 관련된 인스턴스 메서드가 나와있음
+ * 
+ * ex) getDay, getFullYear, getHours, getMinutes, getSeconds...
+ * 
+ * 현재 시각을 표시해 주기 위해서  getHours, getMinutes, getSeconds를 사용할 것이다.
+ * 
+    * new를 붙이는 이유는 그냥 date();를 사용해서 얻는 결과값은 new date();를 쓴 것을 그대로 string으로 만든 것이기 때문에 .gethours같은 property를 사용할 수 없다고 하네요.
+    요약) date(); === new date().toString();
+
+    타이머를 위해서는 setInterval과 같이 사용해야 계속 갱신되는 시간을 볼 수 있다.
+    값을 쓸 때는 `` 백틱 사이에 ${값} 넣으면 된다.
+
+    clock.innerText = `${hours}:${minutes}:${seconds}`; 이렇게 표현가능
+
+    그냥 보기에는 좋아보이지 않음 한 자리 일때는 앞에 0을 붙여서 표현하고 싶다.
+    => padStart 사용 padStart(가져야할 자리수, "빈자리에 채울 것") / 가지고 있는 string을 보다 길게 만들어야 할 때 사용
+    padEnd()는 뒷자리에 하고 싶을 때,
+    아래와 같이 표현한다.
+    const hours = String(date.getHours()).padStart(2, "0");
+    const minutes = String(date.getMinutes()).padStart(2, "0");
+    const seconds = String(date.getSeconds()).padStart(2, "0");
+    📍padStart는 string에만 사용가능 -> number는 string으로 변환해야 한다. 삼항연산자도 사용하는 경우 있음
+
+    getClock();
+    setInterval(getClock, 1000)
+    이렇게 한 이유 => 브라우저가 로드되면 시계를 바로 실행하고 그 다음부터는 interval로 실행
+    (setInterval만 쓰면 로드되고 1초 뒤에 시계가 실행되기 때문)
+
+
+
+
+
+
+ */

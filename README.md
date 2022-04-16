@@ -20,3 +20,5 @@
 [✍️ Day6](./Day6/TIL_Day6.md)
 
 [✍️ Day7](./Day7/TIL_Day7.md)
+
+[✍️ Day8](./Day8/TIL_Day8.md)
