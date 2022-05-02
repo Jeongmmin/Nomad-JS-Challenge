@@ -6,106 +6,94 @@
 <br/>
 <br/>
 
-> 🌱 **ToDo List 기본 틀 준비**  
+> 🌱 **user의 위도(latitude) , 경도(longitude) 구하기**  
 
-👉 일단 필요한 요소들은 어떤 것이 있는지 알아보자.
-- Form
-  - 사용자가 todo 입력 → 제출하는 형태가 필요하다.
-- List
-  - 입력한 todo를 나열해야 된다.
-- input
-  - 사용자에게 todo를 입력 받아야 한다.
-  
+👉  navigator 함수를 이용해 사용자의 위치를 알아내는 코드 작성
+- [mdn 링크](https://developer.mozilla.org/ko/docs/Web/API/Geolocation/getCurrentPosition)
+- JavaScript가 position을 통해서 user의 위치를 전달해줌.
+- position은 object이고, 위도, 경도 값이 포함되어 있다. 
+- position( )함수는 2개의 인자가 필요하다.
+	- 정상적으로 실행됐을 때의 함수 (onGeoOk)
+    - 실행 실패했을 때의 함수 (onGeoError)
+```js
+  navigator.geolocation.getCurrentPosition(실행⭕함수, 실행❌함수)
+```
+- 실행 🙆🏻‍♀️함수 (onGeoOk), 실행🙅🏻‍♀️ 함수 (onGeoError)로 설정
 - 예시 코드
-```html
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-```
 ```js
-    const toDoForm = document.getElementById("todo-form");
-    const toDoInput = document.querySelector("#todo-form input");
-    const toDoList = document.getElementById("todo-list");
-
-    function paintToDo(newTodo) {       
-      const li = document.createElement("li");        
-      const span = document.createElement("span");    
-      li.appendChild(span);                      
-      span.innerText = newTodo;                   
-      toDoList.appendChild(li);                  
+  function onGeoOk(position){
+    const lat = position.coords.latitude;
+    const lng = position.coords.longitude;
+    console.log("You live in", lat, lng);
     }
 
-    function handleToDoSubmit(event) {
-      event.preventDefault();
-      const newTodo = toDoInput.value; 
-      toDoInput.value = "";  
-      paintToDo(newTodo);     
+  function onGeoError() {
+    alert("Can't find you. No weather for you.");
     }
 
-    toDoForm.addEventListener("submit", handleToDoSubmit);
+  navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
 ```
-- 주목할 만한 코드
-```js
-    // 나중에 button도 추가하기 위해서 span으로 만든다
-    li.appendChild(span);    
-    
-    /** 
-    ToDo는 입력받은 value대로 각각 한 줄씩 존재한다.
-    input의 현재 value를 새로운 변수에 복사하고 있다. 
-    복사 한 것이므로 다음에 input에 뭘해도 아무 지장이 없다.
-    */ 
-    const newTodo = toDoInput.value; 
 
-    // todo Input을 비어 있는 상태로 만들어 준다.
-    toDoInput.value = "";   
-    
-    // paintToDo에 newTodo를 인자로 주면서 호출한다.
-    paintToDo(newTodo); 
-```
-- 그 외 해결사항
-  - form이 submit 후 새로고침 되지 않도록 기본동작 막기 - preventDefault( ) 사용
-  - todo를 지우는 버튼도 만들어 보자.
-  - 새로고침 뒤에도 입력한 todo가 사라지지 않도록 만들자.
 
 
 <br/>    
 <br/>
 <br/>
 
-> 🌱 **Delete ToDos**  
+> 🌱 **OpenweatherApi 사용준비**  
 
-👉  todo 삭제 버튼 만들기
-- 조건
-  - 이 버튼은 event를 수신해야 한다.
-  - append는 마지막에 넣어주어야 한다. 
-    ("todo list + 삭제버튼"이 리스트의 한 쌍이다. 각자 다 만든 후 li에 append!)
-- 삭제 버튼 만들기
-  - 버튼 태그 만들기 → 안에 들어갈 요소 넣기 (del, x) → 이벤트 수신할 수 있게 설정
-```js
-    function paintToDo(newTodo) {
-      const li = document.createElement("li");
-      const span = document.createElement("span");
-      span.innerText = newTodo;
+👉 OpenweatherApi이용해서 user의 현재 위치, 날씨 Data 받아오도록 준비하기
+- https://openweathermap.org
+- 회원가입 후 개인 Api key 발급받기
+- https://openweathermap.org/api
+- 로그인 후 api doc 목록으로 이동
+- current Weather Data api를 사용하여 위치, 날씨, 온도 Data 받아 올 수 있다.
+- 💡 Tip!
+	-  JSON 데이터를 편하게 볼 수 있는 방법
+    - 크롬 확장 프로그램 [JSON Viewer](https://chrome.google.com/webstore/detail/json-viewer/gbmdgpbipfallnflgajpaliibnhdgobh?hl=ko) 설치
+![](https://velog.velcdn.com/images/jmindev/post/0e373212-04d3-42c3-a14a-8af15a553578/image.png)
 
-      const button = document.createElement("button");    //button 만들기
-      button.innerText = "❌";                            // button 안에 x 이모티콘 넣기
-      button.addEventListener("click", deleteToDo);       // 버튼 이벤트 수신
 
-      li.appendChild(span);                               
-      li.appendChild(button);                             
-      toDoList.appendChild(li);                          
-    }
+<br/>    
+<br/>
+<br/>
+
+> 🌱 **OpenweatherApi 사용하기**  
+
+👉 user의 현재 위치, 날씨 Data 받아오기
 ```
-- 요소를 삭제하는 deleteToDo 함수 만들기
-  - 여러개의 todo중에 어떤 것을 지워야 할지 알아야 한다.
-  - click이벤트를 console로 확인해보면 Path에서 버튼이 li에 포함되어 있는 것을 알 수 있다.  
-- deleteToDo 코드
+  https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key}
+```
+
+- 이 주소에 위에서 구한 lat, lon, api key를 넣은 후 크롬 주소창에 검색해본 뒤 값이 잘 나온다면 다음 과정을 진행할 수 있다.
+- 이제 url에서 필요한 값을 get해볼 것이다.
+	- 링크를 클릭하면 브라우저가 주소로 이동해서 응답하여 값을 보여준다. 
+    - javaScript는 링크를 누르는 대신 fetch를 사용해서 url을 call 해준다.
+- 얻고자하는 데이터
+	- 우리가 있는 장소의 이름 (서울, 부산...)
+	- 장소의 날씨 (맑음, 흐름, 비...)
+    - 기온 (지금은 화씨온도로 되어있는데, 섭씨온도로 바꾸기 위해서 api doc을 살펴볼 필요가 있다.)
+- 화씨(Fahrenheit) → 섭씨(Celsius) 변환방법
+	- units을 사용하면 된다.
+	- 각각imperial(화씨), metric(섭씨), standard(절대온도)를 의미
+    - url 끝에 &units=metric을 붙이면 섭씨온도가 포함된 결과를 얻을 수 있다.
 ```js
-    function deleteToDo(event) {                        
-      const li = event.target.parentElement;          
-      li.remove();
-    }
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+```
+- fetch가 일어나는 것은 간단하지 않은 과정이다.
+	- fetch는 promise이다.
+    - promise는 당장 뭔가 일어나지 않고 시간이 좀 지난 뒤에 일어나는 것이다.
+    - 기다렸다가 내용 추출 => Data 얻기 순서로 이루어져있다.
+    - 아래의 형태로 사용
+```js
+  fetch(url).then(reponse => response.json()).then(data => {
+     // 기다린 후 실행하려는 코드 입력하는 곳
+  })
+
+  // 예시)
+  fetch(url).then(reponse => response.json()).then(data => {
+    console.log(data.name, data.weather[0].main)
+  })
 ```
 
 
@@ -115,10 +103,47 @@
 <br/>
 
  
-> 🌱 **Save ToDos**  
+> 🌱 **User의 위치, 날씨, 기온 얻는 방법**  
 
-👉  새로고침해도 사라지지 않도록 저장하기.
-- toDos라는 이름의 빈 배열 선언하기
+👉  전체 코드 살펴보기
+- json data를 통해 얻을 수 있는 Data
+	- 위치 : data.name
+  - 날씨 : data.weather[0].main
+  - 섭씨기온 : data.main.temp
+- html
+```html
+	<div id="weather">
+      <span></span>
+      <span></span>
+	</div>
+```
+- javaScript
+```js
+	const weather = document.querySelector("#weather span:first-child");
+  const city = document.querySelector("#weather span:last-child");
+  const API_KEY = "가입하면서 받은 api key";
+
+
+  function onGeoOk(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
+      fetch(url)
+          .then((response) => response.json())
+          .then((data) => {
+          city.innerHTML = data.name;
+          weather.innerText = `${data.weather[0].main} / ${data.main.temp}`;
+          });
+      console.log(url);
+  }
+
+
+  function onGeoError() {
+  alert("Can't find you. No weather for you.");
+  }
+
+  navigator.geolocation.getCurrentPosition(onGeoOk, onGeoError);
+```
 
 
 <br/>
